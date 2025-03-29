@@ -11,9 +11,14 @@ def hello():
 @app.route('/api/data', methods=['GET'])
 def data():
     return jsonify({"data": [1, 2, 3, 4, 5]})
+
 @app.route('/api/foo', methods=['GET'])
 def foo():
     return jsonify({"message": "Hello, Foo"})
 
+@app.route('/api/apoli', methods=['GET'])
+def apoli():
+    return jsonify({"message": "Hello, apoli"})
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
